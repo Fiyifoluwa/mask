@@ -12,10 +12,12 @@ import Row from '../Row';
 import Icon from '../Icon';
 import {heightPixel} from '../../utils/responsiveDimensions';
 import {useTheme} from '../../theme';
+import {isEmpty} from 'lodash';
 
 interface InventoryFormProps {
   initialValues: Partial<InventoryItem>;
   onSubmit: (values: Partial<InventoryItem>) => Promise<void>;
+  onContinueAndAdd?: (values: Partial<InventoryItem>) => Promise<void>;
   submitButtonText: string;
   existingItems: InventoryItem[];
   currentItemId?: string;
@@ -25,6 +27,7 @@ interface InventoryFormProps {
 export const InventoryForm: FC<InventoryFormProps> = ({
   initialValues,
   onSubmit,
+  onContinueAndAdd,
   submitButtonText,
   existingItems,
   currentItemId,
@@ -48,13 +51,25 @@ export const InventoryForm: FC<InventoryFormProps> = ({
     }
   };
 
+  const handleFormSubmit = async (values: Partial<InventoryItem>) => {
+    await onSubmit(values);
+  };
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={handleFormSubmit}
       validateOnMount={true}>
-      {({handleSubmit, isValid, setFieldValue, values}) => (
+      {({
+        handleSubmit,
+        isValid,
+        setFieldValue,
+        values,
+        resetForm,
+        validateForm,
+        setFieldTouched,
+      }) => (
         <ScrollView
           contentContainerStyle={FormStyles.scrollViewContainer}
           bounces={false}>
@@ -123,6 +138,30 @@ export const InventoryForm: FC<InventoryFormProps> = ({
               multiline
               hideLabel
             />
+
+            {!currentItemId && onContinueAndAdd && (
+              <Pressable
+                mt="m"
+                onPress={async () => {
+                  const errors = await validateForm();
+
+                  if (isEmpty(errors)) {
+                    await onContinueAndAdd(values);
+                    resetForm();
+                  } else {
+                    Object.keys(errors).forEach(key => {
+                      setFieldTouched(key);
+                    });
+                  }
+                }}>
+                <Row centerAlign>
+                  <Icon name="Plus" size="smh" color={colors.primary} />
+                  <Text variant="regular14" color="primary">
+                    Continue & add another item
+                  </Text>
+                </Row>
+              </Pressable>
+            )}
           </Box>
 
           <Box py="m">
