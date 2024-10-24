@@ -5,6 +5,7 @@ import {
   isValid,
   isYesterday,
 } from 'date-fns';
+import {capitalize} from 'lodash';
 
 /**
  * Calculates the total credit or debit amount of transactions within a date range.
@@ -51,7 +52,7 @@ export const lastModifiedAt = (
   const {
     includeSeconds = true,
     includeSuffix = true,
-    dateFormat = "do MMMM yyyy 'at' HH:mm:ss",
+    dateFormat = "do MMM, yyyy 'at' HH:mm:ss",
   } = options;
 
   const date = new Date(dateString);
@@ -68,7 +69,7 @@ export const lastModifiedAt = (
         addSuffix: includeSuffix,
         includeSeconds,
       });
-      return `${hoursAgo}. ${fullDateString}`;
+      return `${capitalize(hoursAgo)}. ${fullDateString}`;
     }
 
     if (isYesterday(date)) {
@@ -78,6 +79,6 @@ export const lastModifiedAt = (
     return fullDateString;
   } catch (error) {
     console.error('Error formatting date:', error);
-    return 'Date formatting error';
+    return 'We encountered an error getting the time this item was last modified';
   }
 };
