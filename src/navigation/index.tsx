@@ -5,6 +5,7 @@ import {Home} from '../screens/Home';
 import {AddItem} from '../screens/AddItem';
 import {EditItem} from '../screens/EditItem';
 import {AppStackParamList} from './types';
+import {navigationRef} from '../components/Header';
 
 const Stack = createStackNavigator<AppStackParamList>();
 
@@ -16,22 +17,18 @@ export const modalOptions = {
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{title: 'Inventory'}}
-        />
+    <NavigationContainer ref={navigationRef}>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen
           name="AddItem"
           component={AddItem}
-          options={{title: 'Add New Item', ...modalOptions}}
+          options={{...modalOptions}}
         />
         <Stack.Screen
           name="EditItem"
           component={EditItem}
-          options={{title: 'Edit Item', ...modalOptions}}
+          options={{...modalOptions}}
         />
       </Stack.Navigator>
     </NavigationContainer>
