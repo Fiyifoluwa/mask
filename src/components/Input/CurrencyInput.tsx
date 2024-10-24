@@ -21,7 +21,7 @@ const CONTAINER: ViewStyle = {
 };
 
 const defaultStyle = {
-  fontFamily: 'Archivo',
+  fontFamily: 'Moderat-Regular',
   paddingBottom: 1,
 };
 

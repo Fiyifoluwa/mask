@@ -42,7 +42,7 @@ const TextInputWithoutFormik: React.FC<
     fontSize: heightPixel(14),
     height: heightPixel(55),
     width: '100%',
-    fontFamily: 'Archivo',
+    fontFamily: 'Moderat-Regular',
   };
 
   const containerStyle: ViewStyle = {

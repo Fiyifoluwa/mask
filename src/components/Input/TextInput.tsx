@@ -60,7 +60,7 @@ const TextInput: React.FC<InputProps> = ({
     fontSize: heightPixel(14),
     height: rest.multiline ? heightPixel(100) : heightPixel(55),
     width: '100%',
-    fontFamily: 'Archivo',
+    fontFamily: 'Moderat-Regular',
   };
 
   const containerStyle: ViewStyle = {
