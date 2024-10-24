@@ -8,6 +8,7 @@ import LayoutContainer from '../components/LayoutContainer';
 import {lastModifiedAt} from '../utils/functions';
 import Box from '../components/Box';
 import Text from '../components/Text';
+import Toast from 'react-native-toast-message';
 
 type Props = AppStackScreenProps<'EditItem'>;
 
@@ -27,6 +28,12 @@ export const EditItem = ({route, navigation}: Props) => {
     };
 
     await updateItem(updatedItem);
+    Toast.show({
+      type: 'infoToast',
+      props: {
+        text: 'Item updated successfully',
+      },
+    });
     navigation.goBack();
   };
 
@@ -38,6 +45,12 @@ export const EditItem = ({route, navigation}: Props) => {
         style: 'destructive',
         onPress: async () => {
           await deleteItem(currentItem.id);
+          Toast.show({
+            type: 'dangerToast',
+            props: {
+              text: 'Item deleted successfully',
+            },
+          });
           navigation.goBack();
         },
       },

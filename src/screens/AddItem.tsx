@@ -4,6 +4,7 @@ import {useInventory} from '../context/InventoryContext';
 import {InventoryForm} from '../components/InventoryForm';
 import {InventoryItem} from '../types';
 import LayoutContainer from '../components/LayoutContainer';
+import Toast from 'react-native-toast-message';
 
 export const AddItem = () => {
   const navigation = useNavigation();
@@ -26,6 +27,26 @@ export const AddItem = () => {
     navigation.goBack();
   };
 
+  const handleContinueAndAdd = async (values: Partial<InventoryItem>) => {
+    const newItem: InventoryItem = {
+      id: Date.now().toString(),
+      name: values.name!,
+      totalStock: values.totalStock!,
+      price: values.price!,
+      description: values.description!,
+      lastModified: new Date().toISOString(),
+    };
+
+    await addItem(newItem).then(() => {
+      Toast.show({
+        type: 'successToast',
+        props: {
+          text: 'Item added successfully',
+        },
+      });
+    });
+  };
+
   return (
     <LayoutContainer
       backgroundColor="background"
@@ -42,6 +63,7 @@ export const AddItem = () => {
         onSubmit={handleSubmit}
         submitButtonText="Add Item"
         existingItems={items}
+        onContinueAndAdd={handleContinueAndAdd}
       />
     </LayoutContainer>
   );

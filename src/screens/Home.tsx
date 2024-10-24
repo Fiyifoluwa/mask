@@ -125,7 +125,7 @@ export const Home = () => {
                   onPress={() => navigation.navigate('AddItem')}
                   bg="primary"
                   p="s">
-                  <Icon name="Plus" size="xxl" />
+                  <Icon name="Plus" size="xxl" color={colors.white} />
                 </Pressable>
               </Box>
             )}
