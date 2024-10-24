@@ -43,6 +43,8 @@ const TextInput: React.FC<InputProps> = ({
   editable = !disabled,
   expectedRegex,
   style,
+  addedContainerStyle,
+  rightComponent,
   ...rest
 }) => {
   const {colors} = useTheme();
@@ -59,7 +61,7 @@ const TextInput: React.FC<InputProps> = ({
     color: colors?.mainText,
     fontSize: heightPixel(14),
     height: rest.multiline ? heightPixel(100) : heightPixel(55),
-    width: '100%',
+    width: '90%',
     fontFamily: 'Moderat-Regular',
   };
 
@@ -75,6 +77,7 @@ const TextInput: React.FC<InputProps> = ({
     borderWidth: 0.5,
     backgroundColor: disabled ? colors.fainterGrey : colors.transparent,
     paddingTop: rest.multiline ? heightPixel(10) : 'auto',
+    ...addedContainerStyle,
   };
 
   const finalInputStyle: TextStyle = {
@@ -154,6 +157,7 @@ const TextInput: React.FC<InputProps> = ({
           accessibilityLabel={name}
           {...rest}
         />
+        {rightComponent && rightComponent}
       </Box>
       {!hideError && fieldTouched && fieldError && (
         <Text color="red" numberOfLines={1} variant="regular12">

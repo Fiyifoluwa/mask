@@ -78,5 +78,8 @@ export interface InputProps extends TextInputProps {
   onInputPress?: ((event: GestureResponderEvent) => void) | null | undefined;
 
   waitThenFocus?: boolean;
+
   leftComponent?: ReactNode;
+
+  rightComponent?: ReactNode;
 }
