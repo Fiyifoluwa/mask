@@ -40,8 +40,6 @@ interface LayoutType {
   headerText?: string;
   hideBackButton?: boolean;
   activityLoading?: boolean;
-  closeButton?: boolean;
-  closeIconName?: SvgIconPackTypeExtended;
   useScreenLoader?: boolean;
   showBottomInset?: boolean;
   hideRightButton?: boolean;
@@ -49,7 +47,7 @@ interface LayoutType {
   subHeader?: string;
   disabled?: boolean;
   bottomButtonContainerProps?: PressableProps;
-  alert?: ReactNode;
+  showBackButton?: boolean;
 }
 const LayoutContainer = (Props: LayoutType) => {
   const {
@@ -63,7 +61,6 @@ const LayoutContainer = (Props: LayoutType) => {
     onExtraBottomButtonPress = () => {},
     extraBottomButtonBgColor = 'black',
     extraBottomButtonLabel,
-    header = false,
     hasComponentAboveButton = false,
     hasComponentBelowButton = false,
     componentAboveButton,
@@ -75,6 +72,7 @@ const LayoutContainer = (Props: LayoutType) => {
     subHeader,
     bottomButtonContainerProps,
     disabled,
+    showBackButton,
   } = Props;
 
   return (
@@ -82,8 +80,12 @@ const LayoutContainer = (Props: LayoutType) => {
       <SafeAreaBox
         backgroundColor={backgroundColor}
         showBottomInset={showBottomInset}>
-        {Boolean(header) && (
-          <Header headerText={headerText} subHeader={subHeader} />
+        {Boolean(headerText) && (
+          <Header
+            headerText={headerText}
+            subHeader={subHeader}
+            showBackButton={showBackButton}
+          />
         )}
         <Box flex={1} position="relative">
           <Box flex={1} position="relative">
