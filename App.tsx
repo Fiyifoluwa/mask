@@ -3,6 +3,8 @@ import {InventoryProvider} from './src/context/InventoryContext';
 import Navigation from './src/navigation';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme';
+import Toast from 'react-native-toast-message';
+import {toastConfig} from './src/utils/config';
 
 export default function App() {
   return (
@@ -10,6 +12,7 @@ export default function App() {
       <InventoryProvider>
         <Navigation />
       </InventoryProvider>
+      <Toast config={toastConfig} />
     </ThemeProvider>
   );
 }
