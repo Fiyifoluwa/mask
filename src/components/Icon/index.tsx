@@ -8,7 +8,7 @@ export type SvgIconProps = SvgProps & {
   size?: keyof Theme['iconSizes'];
 };
 
-const Icon = forwardRef((Props: SvgIconProps) => {
+const Icon = forwardRef((Props: SvgIconProps, _ref) => {
   const {name, size = 'l', ...rest} = Props;
   const theme = useTheme();
 
