@@ -20,14 +20,18 @@ export const inventoryItemSchema = (existingItems: InventoryItem[]) =>
 
         return !nameExists;
       }),
-    totalStock: Yup.number()
+    totalStock: Yup.string()
       .required('Total stock is required')
-      .min(0, 'Stock cannot be negative')
-      .typeError('Total stock must be a number'),
-    price: Yup.number()
+      .test('is-positive', 'Stock cannot be negative', value => {
+        const number = Number(value);
+        return number >= 0;
+      }),
+    price: Yup.string()
       .required('Price is required')
-      .min(0, 'Price cannot be negative')
-      .typeError('Price must be a number'),
+      .test('is-positive', 'Price cannot be negative', value => {
+        const number = Number(value);
+        return number >= 0;
+      }),
     description: Yup.string()
       .required('Description is required')
       .test(
