@@ -17,6 +17,7 @@
 		7699B88040F8A987B510C191 /* libPods-mask-maskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-mask-maskTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A9DEC03F52C24A71A5AD9294 /* Archivo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C629AC9284A74F1084F351FA /* Archivo.ttf */; };
+		BBD929A40B78E8C74E13B5EB /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EB3FB487CFD16DFB5D743D95 /* PrivacyInfo.xcprivacy */; };
 		DE60E733EEA74361B8D7681C /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBF59FDD05DA45E89BE357EF /* Moderat-Medium.ttf */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		C14D08F4413CCF75B76C2CF3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		C629AC9284A74F1084F351FA /* Archivo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Archivo.ttf; path = ../src/assets/fonts/Archivo.ttf; sourceTree = "<group>"; };
 		DBD9068C27D48D0962F9673C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		EB3FB487CFD16DFB5D743D95 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FBF59FDD05DA45E89BE357EF /* Moderat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Moderat-Medium.ttf"; path = "../src/assets/fonts/Moderat-Medium.ttf"; sourceTree = "<group>"; };
 		FF281C7A6FAC08705840D429 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				C14D08F4413CCF75B76C2CF3 /* PrivacyInfo.xcprivacy */,
 				DBD9068C27D48D0962F9673C /* PrivacyInfo.xcprivacy */,
 				FF281C7A6FAC08705840D429 /* PrivacyInfo.xcprivacy */,
+				EB3FB487CFD16DFB5D743D95 /* PrivacyInfo.xcprivacy */,
 			);
 			name = mask;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				61B880C3C6D54F3AB10D9DE1 /* FugazOne-Regular.ttf in Resources */,
 				DE60E733EEA74361B8D7681C /* Moderat-Medium.ttf in Resources */,
 				6E2EEABAD7ED455CB126908A /* Moderat-Regular.ttf in Resources */,
+				BBD929A40B78E8C74E13B5EB /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +620,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -689,7 +696,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
