@@ -4,6 +4,7 @@ import {useInventory} from '../context/InventoryContext';
 import {InventoryForm} from '../components/InventoryForm';
 import {InventoryItem} from '../types';
 import {AppStackScreenProps} from '../navigation/types';
+import LayoutContainer from '../components/LayoutContainer';
 
 type Props = AppStackScreenProps<'EditItem'>;
 
@@ -19,8 +20,6 @@ export const EditItem = ({route, navigation}: Props) => {
     const updatedItem: InventoryItem = {
       ...currentItem,
       ...values,
-      totalStock: Number(values.totalStock),
-      price: Number(values.price),
     };
 
     await updateItem(updatedItem);
@@ -42,17 +41,23 @@ export const EditItem = ({route, navigation}: Props) => {
   };
 
   return (
-    <View style={styles.container}>
-      <InventoryForm
-        initialValues={currentItem}
-        onSubmit={handleSubmit}
-        submitButtonText="Update Item"
-        existingItems={items}
-      />
-      <View style={styles.deleteButtonContainer}>
-        <Button title="Delete Item" onPress={handleDelete} color="red" />
+    <LayoutContainer
+      backgroundColor="background"
+      header
+      headerText="Edit Item"
+      subHeader="Edit the details of this item">
+      <View style={styles.container}>
+        <InventoryForm
+          initialValues={currentItem}
+          onSubmit={handleSubmit}
+          submitButtonText="Update Item"
+          existingItems={items}
+        />
+        <View style={styles.deleteButtonContainer}>
+          <Button title="Delete Item" onPress={handleDelete} color="red" />
+        </View>
       </View>
-    </View>
+    </LayoutContainer>
   );
 };
 

@@ -3,6 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useInventory} from '../context/InventoryContext';
 import {InventoryForm} from '../components/InventoryForm';
 import {InventoryItem} from '../types';
+import LayoutContainer from '../components/LayoutContainer';
 
 export const AddItem = () => {
   const navigation = useNavigation();
@@ -15,8 +16,8 @@ export const AddItem = () => {
     const newItem: InventoryItem = {
       id: Date.now().toString(),
       name: values.name!,
-      totalStock: Number(values.totalStock),
-      price: Number(values.price),
+      totalStock: values.totalStock!,
+      price: values.price!,
       description: values.description!,
     };
 
@@ -25,16 +26,22 @@ export const AddItem = () => {
   };
 
   return (
-    <InventoryForm
-      initialValues={{
-        name: '',
-        totalStock: 0,
-        price: 0,
-        description: '',
-      }}
-      onSubmit={handleSubmit}
-      submitButtonText="Add Item"
-      existingItems={items}
-    />
+    <LayoutContainer
+      backgroundColor="background"
+      header
+      headerText="Add Item"
+      subHeader="Add a new item to your inventory">
+      <InventoryForm
+        initialValues={{
+          name: '',
+          totalStock: '',
+          price: '',
+          description: '',
+        }}
+        onSubmit={handleSubmit}
+        submitButtonText="Add Item"
+        existingItems={items}
+      />
+    </LayoutContainer>
   );
 };
