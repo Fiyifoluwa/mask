@@ -6,6 +6,7 @@ import {type NavigationContainerRef} from '@react-navigation/native';
 import {AppStackParamList} from '../../navigation/types';
 import Box from '../Box';
 import Row from '../Row';
+import Icon from '../Icon';
 // import type {SvgIconPackTypeExtended} from '@/assets/icons/svgIconPack';
 
 export const navigationRef: RefObject<
@@ -16,58 +17,52 @@ export const navigationRef: RefObject<
 const Header = ({
   headerText,
   subHeader,
+  showBackButton = true,
 }: {
   headerText: string;
   subHeader?: string;
+  showBackButton?: boolean;
 }) => {
   const goBack = () => {
     navigationRef.current?.goBack();
   };
 
   return (
-    <>
-      <Row
-        centerAlign
-        spaceBetween
-        marginBottom={'md'}
-        paddingHorizontal="sm"
-        bg="transparent">
-        <Box width={'20%'}>
-          <Pressable onPress={goBack} bg="transparent">
-            <Text>x</Text>
-            {/* <SvgIcon name={closeIconName || 'CloseXIcon'} size="smh" /> */}
-          </Pressable>
-        </Box>
+    <Box paddingHorizontal="m">
+      {showBackButton && (
+        <Row centerAlign spaceBetween marginBottom={'s'} bg="transparent">
+          <Box width={'30%'}>
+            {showBackButton && (
+              <Pressable
+                onPress={goBack}
+                bg="ash200"
+                alignSelf="flex-start"
+                padding="sm"
+                borderRadius="m">
+                <Icon name={'Close'} size="m" />
+              </Pressable>
+            )}
+          </Box>
 
-        <Box
-          alignItems="center"
-          flexDirection="row"
-          justifyContent="space-between"
-          width={'60%'}>
-          {headerText ? (
-            <Box alignItems="center" flex={1} justifyContent="center">
-              <Text color="mainText" variant="medium16">
-                {headerText}
-              </Text>
-              {subHeader && (
-                <Text color="grey200" textAlign="center" variant="regular12">
-                  {subHeader}
-                </Text>
-              )}
-            </Box>
-          ) : (
-            <Box />
-          )}
-        </Box>
-
-        <Box
-          alignItems="center"
-          flexDirection="row"
-          justifyContent="flex-end"
-          width="20%"
-        />
-      </Row>
-    </>
+          <Box
+            alignItems="center"
+            flexDirection="row"
+            justifyContent="flex-end"
+            width="30%"
+          />
+        </Row>
+      )}
+      <Box>
+        <Text color="primary" variant="headerText">
+          {headerText.toUpperCase()}
+        </Text>
+        {subHeader && (
+          <Text color="greyBlack" variant="subHeaderText">
+            {subHeader}
+          </Text>
+        )}
+      </Box>
+    </Box>
   );
 };
 
