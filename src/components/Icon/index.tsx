@@ -9,7 +9,7 @@ export type SvgIconProps = SvgProps & {
 };
 
 const Icon = forwardRef((Props: SvgIconProps) => {
-  const {name, size = 'lg', ...rest} = Props;
+  const {name, size = 'l', ...rest} = Props;
   const theme = useTheme();
 
   if (name !== undefined) {
