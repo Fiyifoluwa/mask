@@ -1,15 +1,11 @@
 import React, {FC} from 'react';
-import {
-  View,
-  TextInput,
-  Button,
-  Text,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import {Button, ScrollView, StyleSheet} from 'react-native';
 import {Formik} from 'formik';
 import {inventoryItemSchema} from '../../utils/validation';
-import {InventoryItem} from '../../types';
+import {InventoryItem, regexPatterns} from '../../types';
+import {CurrencyInput, TextInput} from '../Input';
+import Text from '../Text';
+import {heightPixel} from '../../utils/responsiveDimensions';
 
 interface InventoryFormProps {
   initialValues: Partial<InventoryItem>;
@@ -32,84 +28,42 @@ export const InventoryForm: FC<InventoryFormProps> = ({
       validationSchema={validationSchema}
       onSubmit={onSubmit}
       validateOnMount={true}>
-      {({
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        values,
-        errors,
-        touched,
-        isValid,
-      }) => (
+      {({handleSubmit, isValid}) => (
         <ScrollView style={styles.container}>
-          <View style={styles.fieldContainer}>
-            <TextInput
-              style={[
-                styles.input,
-                touched.name && errors.name && styles.inputError,
-              ]}
-              placeholder="Item Name"
-              value={values.name}
-              onChangeText={handleChange('name')}
-              onBlur={handleBlur('name')}
-            />
-            {touched.name && errors.name && (
-              <Text style={styles.errorText}>{errors.name}</Text>
-            )}
-          </View>
+          <TextInput
+            name="name"
+            label="Item Name"
+            placeholder="Enter item name"
+            autoCapitalize="words"
+            autoCorrect={false}
+            hideLabel
+          />
 
-          <View style={styles.fieldContainer}>
-            <TextInput
-              style={[
-                styles.input,
-                touched.totalStock && errors.totalStock && styles.inputError,
-              ]}
-              placeholder="Total Stock"
-              value={values.totalStock?.toString()}
-              onChangeText={handleChange('totalStock')}
-              onBlur={handleBlur('totalStock')}
-              keyboardType="numeric"
-            />
-            {touched.totalStock && errors.totalStock && (
-              <Text style={styles.errorText}>{errors.totalStock}</Text>
-            )}
-          </View>
+          <TextInput
+            name="totalStock"
+            label="Total stock"
+            placeholder="Enter total stock"
+            keyboardType="numeric"
+            expectedRegex={regexPatterns.NUMBER}
+            hideLabel
+          />
 
-          <View style={styles.fieldContainer}>
-            <TextInput
-              style={[
-                styles.input,
-                touched.price && errors.price && styles.inputError,
-              ]}
-              placeholder="Price"
-              value={values.price?.toString()}
-              onChangeText={handleChange('price')}
-              onBlur={handleBlur('price')}
-              keyboardType="decimal-pad"
-            />
-            {touched.price && errors.price && (
-              <Text style={styles.errorText}>{errors.price}</Text>
-            )}
-          </View>
+          <CurrencyInput
+            leftComponent={<Text mr="s">₦</Text>}
+            label="Price"
+            name="price"
+            placeholder="Enter price"
+            hideLabel
+          />
 
-          <View style={styles.fieldContainer}>
-            <TextInput
-              style={[
-                styles.input,
-                styles.multiline,
-                touched.description && errors.description && styles.inputError,
-              ]}
-              placeholder="Description (minimum 3 words)"
-              value={values.description}
-              onChangeText={handleChange('description')}
-              onBlur={handleBlur('description')}
-              multiline
-              numberOfLines={4}
-            />
-            {touched.description && errors.description && (
-              <Text style={styles.errorText}>{errors.description}</Text>
-            )}
-          </View>
+          <TextInput
+            name="description"
+            label="Description"
+            placeholder="Enter description (minimum 3 words)"
+            style={{height: heightPixel(100)}}
+            multiline
+            hideLabel
+          />
 
           <Button
             title={submitButtonText}
