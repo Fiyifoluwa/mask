@@ -1,0 +1,564 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
+<RCTScrollView
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "padding": 16,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        {
+          "marginBottom": 16,
+        }
+      }
+    >
+      <TextInput
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="Item Name"
+        style={
+          [
+            {
+              "borderColor": "#ccc",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "padding": 8,
+            },
+            undefined,
+          ]
+        }
+        value=""
+      />
+    </View>
+    <View
+      style={
+        {
+          "marginBottom": 16,
+        }
+      }
+    >
+      <TextInput
+        keyboardType="numeric"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="Total Stock"
+        style={
+          [
+            {
+              "borderColor": "#ccc",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "padding": 8,
+            },
+            undefined,
+          ]
+        }
+        value="0"
+      />
+    </View>
+    <View
+      style={
+        {
+          "marginBottom": 16,
+        }
+      }
+    >
+      <TextInput
+        keyboardType="decimal-pad"
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="Price"
+        style={
+          [
+            {
+              "borderColor": "#ccc",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "padding": 8,
+            },
+            undefined,
+          ]
+        }
+        value="0"
+      />
+    </View>
+    <View
+      style={
+        {
+          "marginBottom": 16,
+        }
+      }
+    >
+      <TextInput
+        multiline={true}
+        numberOfLines={4}
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        placeholder="Description (minimum 3 words)"
+        style={
+          [
+            {
+              "borderColor": "#ccc",
+              "borderRadius": 4,
+              "borderWidth": 1,
+              "padding": 8,
+            },
+            {
+              "height": 100,
+              "textAlignVertical": "top",
+            },
+            undefined,
+          ]
+        }
+        value=""
+      />
+    </View>
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {},
+          ]
+        }
+      >
+        <Text
+          disabled={false}
+          style={
+            [
+              {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Add Item
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <RCTScrollView
+    style={
+      {
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "padding": 16,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          {
+            "marginBottom": 16,
+          }
+        }
+      >
+        <TextInput
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          placeholder="Item Name"
+          style={
+            [
+              {
+                "borderColor": "#ccc",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "padding": 8,
+              },
+              undefined,
+            ]
+          }
+          value="Test Item"
+        />
+      </View>
+      <View
+        style={
+          {
+            "marginBottom": 16,
+          }
+        }
+      >
+        <TextInput
+          keyboardType="numeric"
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          placeholder="Total Stock"
+          style={
+            [
+              {
+                "borderColor": "#ccc",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "padding": 8,
+              },
+              undefined,
+            ]
+          }
+          value="10"
+        />
+      </View>
+      <View
+        style={
+          {
+            "marginBottom": 16,
+          }
+        }
+      >
+        <TextInput
+          keyboardType="decimal-pad"
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          placeholder="Price"
+          style={
+            [
+              {
+                "borderColor": "#ccc",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "padding": 8,
+              },
+              undefined,
+            ]
+          }
+          value="99.99"
+        />
+      </View>
+      <View
+        style={
+          {
+            "marginBottom": 16,
+          }
+        }
+      >
+        <TextInput
+          multiline={true}
+          numberOfLines={4}
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          placeholder="Description (minimum 3 words)"
+          style={
+            [
+              {
+                "borderColor": "#ccc",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "padding": 8,
+              },
+              {
+                "height": 100,
+                "textAlignVertical": "top",
+              },
+              undefined,
+            ]
+          }
+          value="Test description for item"
+        />
+      </View>
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {},
+            ]
+          }
+        >
+          <Text
+            disabled={false}
+            style={
+              [
+                {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "margin": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Update Item
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      {
+        "marginTop": 16,
+      }
+    }
+  >
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {},
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "margin": 8,
+                "textAlign": "center",
+              },
+              {
+                "color": "red",
+              },
+            ]
+          }
+        >
+          Delete Item
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Screen Snapshots should match Home screen snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "padding": 16,
+    }
+  }
+>
+  <RCTScrollView
+    ListEmptyComponent={
+      <Text
+        style={
+          {
+            "color": "#666",
+            "fontSize": 16,
+            "marginTop": 20,
+            "textAlign": "center",
+          }
+        }
+      >
+        No items in inventory
+      </Text>
+    }
+    data={[]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={0.0001}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <Text
+        onLayout={[Function]}
+        style={
+          {
+            "color": "#666",
+            "fontSize": 16,
+            "marginTop": 20,
+            "textAlign": "center",
+          }
+        }
+      >
+        No items in inventory
+      </Text>
+    </View>
+  </RCTScrollView>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "backgroundColor": "#007AFF",
+        "borderRadius": 30,
+        "bottom": 20,
+        "elevation": 4,
+        "opacity": 1,
+        "padding": 16,
+        "position": "absolute",
+        "right": 20,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.25,
+        "shadowRadius": 4,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#fff",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Add Item
+    </Text>
+  </View>
+</View>
+`;

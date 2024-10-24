@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Archivo.ttf",
+      "sha1": "ca8d0eb369457af35e6d1595a43ab7136f7e4619"
+    },
+    {
+      "path": "src/assets/fonts/FugazOne-Regular.ttf",
+      "sha1": "09d64ef3d7f00e5fea947f889388396b1bed7bc6"
+    },
+    {
+      "path": "src/assets/fonts/Moderat-Medium.ttf",
+      "sha1": "d67426349e532644c9c3e6688a08b0d378fb199c"
+    },
+    {
+      "path": "src/assets/fonts/Moderat-Regular.ttf",
+      "sha1": "3ebd3260b9390d93e6e7d4ef127905b40aac0383"
+    }
+  ]
+}

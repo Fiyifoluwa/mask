@@ -14,7 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-mask-maskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-mask-maskTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		EA7E035CC647013C7B4FDA32 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C14D08F4413CCF75B76C2CF3 /* PrivacyInfo.xcprivacy */; };
+		A8C38CCEE9B1776CCBD3E485 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FF281C7A6FAC08705840D429 /* PrivacyInfo.xcprivacy */; };
+		A9DEC03F52C24A71A5AD9294 /* Archivo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C629AC9284A74F1084F351FA /* Archivo.ttf */; };
+		61B880C3C6D54F3AB10D9DE1 /* FugazOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF8C3EBD599D4B4194AE585B /* FugazOne-Regular.ttf */; };
+		DE60E733EEA74361B8D7681C /* Moderat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBF59FDD05DA45E89BE357EF /* Moderat-Medium.ttf */; };
+		6E2EEABAD7ED455CB126908A /* Moderat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DEB8148FCA84B41BBF86466 /* Moderat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +49,14 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-mask.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mask.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mask/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-mask-maskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mask-maskTests.release.xcconfig"; path = "Target Support Files/Pods-mask-maskTests/Pods-mask-maskTests.release.xcconfig"; sourceTree = "<group>"; };
-		C14D08F4413CCF75B76C2CF3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C14D08F4413CCF75B76C2CF3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		DBD9068C27D48D0962F9673C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FF281C7A6FAC08705840D429 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = mask/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C629AC9284A74F1084F351FA /* Archivo.ttf */ = {isa = PBXFileReference; name = "Archivo.ttf"; path = "../src/assets/fonts/Archivo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF8C3EBD599D4B4194AE585B /* FugazOne-Regular.ttf */ = {isa = PBXFileReference; name = "FugazOne-Regular.ttf"; path = "../src/assets/fonts/FugazOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FBF59FDD05DA45E89BE357EF /* Moderat-Medium.ttf */ = {isa = PBXFileReference; name = "Moderat-Medium.ttf"; path = "../src/assets/fonts/Moderat-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9DEB8148FCA84B41BBF86466 /* Moderat-Regular.ttf */ = {isa = PBXFileReference; name = "Moderat-Regular.ttf"; path = "../src/assets/fonts/Moderat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 				C14D08F4413CCF75B76C2CF3 /* PrivacyInfo.xcprivacy */,
+				DBD9068C27D48D0962F9673C /* PrivacyInfo.xcprivacy */,
+				FF281C7A6FAC08705840D429 /* PrivacyInfo.xcprivacy */,
 			);
 			name = mask;
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				A85A067040A44F6EB486B714 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +165,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		A85A067040A44F6EB486B714 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				C629AC9284A74F1084F351FA /* Archivo.ttf */,
+				BF8C3EBD599D4B4194AE585B /* FugazOne-Regular.ttf */,
+				FBF59FDD05DA45E89BE357EF /* Moderat-Medium.ttf */,
+				9DEB8148FCA84B41BBF86466 /* Moderat-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -248,7 +273,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				EA7E035CC647013C7B4FDA32 /* PrivacyInfo.xcprivacy in Resources */,
+				A8C38CCEE9B1776CCBD3E485 /* PrivacyInfo.xcprivacy in Resources */,
+				A9DEC03F52C24A71A5AD9294 /* Archivo.ttf in Resources */,
+				61B880C3C6D54F3AB10D9DE1 /* FugazOne-Regular.ttf in Resources */,
+				DE60E733EEA74361B8D7681C /* Moderat-Medium.ttf in Resources */,
+				6E2EEABAD7ED455CB126908A /* Moderat-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
