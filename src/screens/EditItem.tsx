@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Button, Alert, StyleSheet} from 'react-native';
+import {View, Alert, StyleSheet} from 'react-native';
 import {useInventory} from '../context/InventoryContext';
 import {InventoryForm} from '../components/InventoryForm';
 import {InventoryItem} from '../types';
@@ -55,20 +55,19 @@ export const EditItem = ({route, navigation}: Props) => {
       headerText="Edit Item"
       subHeader="Edit the details of this item">
       <View style={styles.container}>
-        <Box px="m">
-          <Text color="mainText" variant="medium10">
-            Last Modified: {lastModified}
-          </Text>
-        </Box>
         <InventoryForm
           initialValues={currentItem}
           onSubmit={handleSubmit}
           submitButtonText="Update Item"
           existingItems={items}
+          currentItemId={currentItem.id}
+          handleDelete={handleDelete}
         />
-        <View style={styles.deleteButtonContainer}>
-          <Button title="Delete Item" onPress={handleDelete} color="red" />
-        </View>
+        <Box px="m" alignSelf="center">
+          <Text color="mainText" variant="medium10" textAlign="center">
+            Last Modified: {lastModified}
+          </Text>
+        </Box>
       </View>
     </LayoutContainer>
   );

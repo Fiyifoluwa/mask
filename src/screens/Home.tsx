@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {
-  View,
   FlatList,
-  TouchableOpacity,
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
@@ -13,7 +11,6 @@ import {useNavigation} from '@react-navigation/native';
 import {useInventory} from '../context/InventoryContext';
 import {InventoryItem} from '../types';
 import LayoutContainer from '../components/LayoutContainer';
-import {formatAmount} from '../utils/functions';
 import {TextInputWithoutFormik} from '../components/Input';
 import Icon from '../components/Icon';
 import {useTheme} from '../theme';
@@ -22,6 +19,36 @@ import {filter} from 'lodash';
 import Box from '../components/Box';
 import Text from '../components/Text';
 import Pressable from '../components/Pressable';
+import InventoryCard from '../components/InventoryCard';
+import {Palette} from '../theme/palette';
+
+const ItemSeparatorComponent = () => (
+  <Box height={heightPixel(1)} my="s" bg="segmentBorderColor" />
+);
+
+const ListEmptyComponent = ({navigation, searchTerm, itemsLength}: any) => (
+  <Box alignSelf="center" alignItems="center" mt="xxxl">
+    <Text mt="m" textAlign="center">
+      {searchTerm
+        ? `There are no items with "${searchTerm}".`
+        : 'No items in your inventory. \nStart adding items to get started'}
+    </Text>
+
+    {itemsLength < 1 && (
+      <Pressable
+        onPress={() => navigation.navigate('AddItem')}
+        px="ll"
+        py="sml"
+        bg="primary"
+        mt="xxl"
+        borderRadius="xl">
+        <Text color="white" variant="buttonLabel">
+          Add a new item
+        </Text>
+      </Pressable>
+    )}
+  </Box>
+);
 
 export const Home = () => {
   const {
@@ -32,13 +59,10 @@ export const Home = () => {
   const {colors} = useTheme();
 
   const renderItem = ({item}: {item: InventoryItem}) => (
-    <TouchableOpacity
-      style={styles.itemContainer}
-      onPress={() => navigation.navigate('EditItem', {item})}>
-      <Text style={styles.itemName}>{item.name}</Text>
-      <Text>Stock: {item.totalStock}</Text>
-      <Text>Price: {formatAmount(item.price)}</Text>
-    </TouchableOpacity>
+    <InventoryCard
+      item={item}
+      onItemPress={() => navigation.navigate('EditItem', {item})}
+    />
   );
 
   const filteredItems = filter(items, item => {
@@ -52,31 +76,31 @@ export const Home = () => {
   });
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.keyboardAvoidingContainer}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <LayoutContainer
-          headerText="Inventory"
-          subHeader="Manage your inventory"
-          showBackButton={false}>
-          <View style={styles.container}>
+    <LayoutContainer
+      headerText="Inventory"
+      subHeader="Manage your inventory"
+      showBackButton={false}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.keyboardAvoidingContainer}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <Box flex={1} gap="m">
             {items.length > 0 && (
-              <TextInputWithoutFormik
-                hideLabel
-                leftComponent={<Icon name="Search" size="smh" />}
-                label="Search"
-                name="search"
-                placeholder={'Search Inventory'}
-                value={searchTerm}
-                onChangeText={text => setSearhTerm(text)}
-                addedContainerStyle={{
-                  backgroundColor: colors.fainterGrey,
-                }}
-                outerContainerStyle={{
-                  marginTop: heightPixel(16),
-                }}
-              />
+              <Box mt="m" px="m">
+                <TextInputWithoutFormik
+                  hideLabel
+                  leftComponent={<Icon name="Search" size="smh" />}
+                  label="Search"
+                  name="search"
+                  autoCapitalize="none"
+                  placeholder={'Search Inventory...'}
+                  value={searchTerm}
+                  onChangeText={text => setSearhTerm(text)}
+                  addedContainerStyle={{
+                    backgroundColor: colors.fainterGrey,
+                  }}
+                />
+              </Box>
             )}
 
             <FlatList
@@ -84,41 +108,31 @@ export const Home = () => {
               renderItem={renderItem}
               keyExtractor={item => item.id}
               keyboardShouldPersistTaps="handled"
+              ItemSeparatorComponent={ItemSeparatorComponent}
               ListEmptyComponent={
-                <Box alignSelf="center" alignItems="center" mt="xxxl">
-                  <Text mt="m" textAlign="center">
-                    {searchTerm
-                      ? `There are no items with "${searchTerm}".`
-                      : 'No items in your inventory. \nStart adding items to get started'}
-                  </Text>
-
-                  <Pressable
-                    onPress={() => navigation.navigate('AddItem')}
-                    px="ll"
-                    py="sml"
-                    bg="primary"
-                    mt="m"
-                    borderRadius="xl">
-                    <Text color="white" variant="buttonLabel">
-                      Add a new item
-                    </Text>
-                  </Pressable>
-                </Box>
+                <ListEmptyComponent
+                  navigation={navigation}
+                  searchTerm={searchTerm}
+                  itemsLength={items.length}
+                />
               }
             />
+
             {items.length > 0 && (
-              <View style={styles.addButtonContainer}>
-                <TouchableOpacity
+              <Box style={styles.addButtonContainer}>
+                <Pressable
                   style={styles.addButton}
-                  onPress={() => navigation.navigate('AddItem')}>
-                  <Text style={styles.addButtonText}>Add Item</Text>
-                </TouchableOpacity>
-              </View>
+                  onPress={() => navigation.navigate('AddItem')}
+                  bg="primary"
+                  p="s">
+                  <Icon name="Plus" size="xxl" />
+                </Pressable>
+              </Box>
             )}
-          </View>
-        </LayoutContainer>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+          </Box>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+    </LayoutContainer>
   );
 };
 
@@ -126,65 +140,20 @@ const styles = StyleSheet.create({
   keyboardAvoidingContainer: {
     flex: 1,
   },
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  itemContainer: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
-  itemName: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  emptyText: {
-    textAlign: 'center',
-    marginTop: 20,
-    fontSize: 16,
-    color: '#666',
-  },
   addButtonContainer: {
     position: 'absolute',
-    right: 0,
-    bottom: 0,
-    paddingHorizontal: 16,
-    paddingBottom: Platform.OS === 'ios' ? 20 : 16,
+    right: 16,
+    bottom: Platform.OS === 'ios' ? 20 : 16,
     backgroundColor: 'transparent',
-    maxWidth: '50%',
   },
   addButton: {
-    backgroundColor: '#007AFF',
-    padding: 16,
     borderRadius: 30,
     elevation: 4,
-    shadowColor: '#000',
+    shadowColor: Palette.black,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.25,
     shadowRadius: 4,
-    alignItems: 'center', // Center the text
-  },
-  addButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 4,
-    padding: 8,
-    marginBottom: 16,
-  },
-  multiline: {
-    height: 100,
-    textAlignVertical: 'top',
-  },
-  error: {
-    color: 'red',
-    marginBottom: 8,
-  },
-  deleteButtonContainer: {
-    marginTop: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
