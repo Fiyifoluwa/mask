@@ -5,6 +5,9 @@ import {InventoryForm} from '../components/InventoryForm';
 import {InventoryItem} from '../types';
 import {AppStackScreenProps} from '../navigation/types';
 import LayoutContainer from '../components/LayoutContainer';
+import {lastModifiedAt} from '../utils/functions';
+import Box from '../components/Box';
+import Text from '../components/Text';
 
 type Props = AppStackScreenProps<'EditItem'>;
 
@@ -20,6 +23,7 @@ export const EditItem = ({route, navigation}: Props) => {
     const updatedItem: InventoryItem = {
       ...currentItem,
       ...values,
+      lastModified: new Date().toISOString(),
     };
 
     await updateItem(updatedItem);
@@ -40,6 +44,10 @@ export const EditItem = ({route, navigation}: Props) => {
     ]);
   };
 
+  const lastModified = lastModifiedAt(
+    currentItem.lastModified ?? new Date().toISOString(),
+  );
+
   return (
     <LayoutContainer
       backgroundColor="background"
@@ -47,6 +55,11 @@ export const EditItem = ({route, navigation}: Props) => {
       headerText="Edit Item"
       subHeader="Edit the details of this item">
       <View style={styles.container}>
+        <Box px="m">
+          <Text color="mainText" variant="medium10">
+            Last Modified: {lastModified}
+          </Text>
+        </Box>
         <InventoryForm
           initialValues={currentItem}
           onSubmit={handleSubmit}

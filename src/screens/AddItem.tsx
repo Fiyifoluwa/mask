@@ -19,6 +19,7 @@ export const AddItem = () => {
       totalStock: values.totalStock!,
       price: values.price!,
       description: values.description!,
+      lastModified: new Date().toISOString(),
     };
 
     await addItem(newItem);

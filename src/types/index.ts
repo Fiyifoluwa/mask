@@ -4,6 +4,7 @@ export interface InventoryItem {
   totalStock: string;
   price: string;
   description: string;
+  lastModified?: string;
 }
 
 export type InventoryAction =

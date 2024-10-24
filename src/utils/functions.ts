@@ -1,3 +1,11 @@
+import {
+  format,
+  formatDistanceToNow,
+  isToday,
+  isValid,
+  isYesterday,
+} from 'date-fns';
+
 /**
  * Calculates the total credit or debit amount of transactions within a date range.
  *
@@ -28,4 +36,48 @@ export const formatAmount = (
     return `${currencySymbol}${wholeNumberPart}.${fractionalPart}`;
   }
   return '₦0.00';
+};
+
+type LastModifiedOptions = {
+  includeSeconds?: boolean;
+  includeSuffix?: boolean;
+  dateFormat?: string;
+};
+
+export const lastModifiedAt = (
+  dateString: string,
+  options: LastModifiedOptions = {},
+): string => {
+  const {
+    includeSeconds = true,
+    includeSuffix = true,
+    dateFormat = "do MMMM yyyy 'at' HH:mm:ss",
+  } = options;
+
+  const date = new Date(dateString);
+
+  if (!isValid(date)) {
+    return 'Invalid date';
+  }
+
+  try {
+    const fullDateString = format(date, dateFormat);
+
+    if (isToday(date)) {
+      const hoursAgo = formatDistanceToNow(date, {
+        addSuffix: includeSuffix,
+        includeSeconds,
+      });
+      return `${hoursAgo}. ${fullDateString}`;
+    }
+
+    if (isYesterday(date)) {
+      return `Yesterday. ${fullDateString}`;
+    }
+
+    return fullDateString;
+  } catch (error) {
+    console.error('Error formatting date:', error);
+    return 'Date formatting error';
+  }
 };
