@@ -51,7 +51,6 @@ const defaultContainerProps: PressableProps = {
 
 const defaultLabelProps: TextProps = {
   color: 'white',
-  // fontFamily: 'Aeonik-Medium',
   fontSize: fontPixel(15),
   fontWeight: '500',
 };
