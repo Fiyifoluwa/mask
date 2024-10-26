@@ -22,53 +22,6 @@ const theme = createTheme({
     xl: heightPixel(32),
   },
 
-  buttonSizes: {
-    lg: {
-      paddingHorizontal: 'xl',
-      paddingVertical: 'lg',
-    },
-    md: {
-      paddingHorizontal: 'lg',
-      paddingVertical: 'md',
-    },
-    none: {
-      paddingHorizontal: 'none',
-      paddingVertical: 'none',
-    },
-    sm: {
-      paddingHorizontal: 'md',
-      paddingVertical: 'sm',
-    },
-    xl: {
-      paddingHorizontal: 'xxl',
-      paddingVertical: 'xl',
-    },
-    xs: {
-      paddingHorizontal: 'sm',
-      paddingVertical: 'xs',
-    },
-  },
-
-  buttonVariants: {
-    defaults: {
-      borderRadius: 'sm',
-    },
-    filled: {
-      backgroundColor: 'primaryColor',
-    },
-    ghost: {
-      backgroundColor: 'paleGrey50',
-    },
-    none: {},
-    outlined: {
-      borderColor: 'paleGrey',
-      borderWidth: 1,
-    },
-    transparent: {
-      backgroundColor: 'transparent',
-    },
-  },
-
   colors: {
     ...Palette,
   },
