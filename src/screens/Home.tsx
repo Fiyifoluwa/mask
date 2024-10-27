@@ -125,7 +125,7 @@ export const Home = () => {
                   onPress={() => navigation.navigate('AddItem')}
                   bg="primary"
                   p="s">
-                  <Icon name="Plus" size="xxl" color={colors.white} />
+                  <Icon name="Plus" size="xxxl" color={colors.white} />
                 </Pressable>
               </Box>
             )}
@@ -147,7 +147,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   addButton: {
-    borderRadius: 30,
+    height: 60,
+    width: 60,
+    borderRadius: 45,
     elevation: 4,
     shadowColor: Palette.black,
     shadowOffset: {width: 0, height: 2},
