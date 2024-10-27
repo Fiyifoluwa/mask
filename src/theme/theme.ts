@@ -20,6 +20,8 @@ const theme = createTheme({
     l: heightPixel(20),
     ll: heightPixel(24),
     xl: heightPixel(32),
+    xxl: heightPixel(36),
+    xxxl: heightPixel(48),
   },
 
   colors: {
