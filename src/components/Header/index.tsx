@@ -7,6 +7,7 @@ import {AppStackParamList} from '../../navigation/types';
 import Box from '../Box';
 import Row from '../Row';
 import Icon from '../Icon';
+import {heightPixel} from '../../utils/responsiveDimensions';
 // import type {SvgIconPackTypeExtended} from '@/assets/icons/svgIconPack';
 
 export const navigationRef: RefObject<
@@ -30,7 +31,7 @@ const Header = ({
   return (
     <Box paddingHorizontal="m">
       {showBackButton && (
-        <Row centerAlign spaceBetween marginBottom={'s'} bg="transparent">
+        <Row centerAlign spaceBetween marginVertical={'s'} bg="transparent">
           <Box width={'30%'}>
             {showBackButton && (
               <Pressable
@@ -38,7 +39,11 @@ const Header = ({
                 bg="ash200"
                 alignSelf="flex-start"
                 padding="sm"
-                borderRadius="m">
+                height={heightPixel(40)}
+                width={heightPixel(40)}
+                alignItems="center"
+                justifyContent="center"
+                borderRadius="xxxl">
                 <Icon name={'Close'} size="m" />
               </Pressable>
             )}

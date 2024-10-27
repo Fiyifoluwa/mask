@@ -16,13 +16,17 @@ const CONTAINER: ViewStyle = {
   alignItems: 'center',
   flexDirection: 'row',
   height: heightPixel(48),
-  paddingLeft: heightPixel(10),
+  paddingHorizontal: heightPixel(10),
   width: '100%',
 };
 
-const defaultStyle = {
+const defaultStyle: TextStyle = {
   fontFamily: 'Moderat-Regular',
-  paddingBottom: 1,
+  paddingBottom: 2,
+  paddingVertical: 0,
+  textAlign: 'left',
+  includeFontPadding: false,
+  textAlignVertical: 'center',
 };
 
 const CurrencyInput = ({
@@ -72,6 +76,9 @@ const CurrencyInput = ({
     fontSize: heightPixel(14),
     height: heightPixel(55),
     width: '100%',
+    textAlignVertical: 'center',
+    paddingVertical: 0,
+    margin: 0,
   };
 
   const containerStyle: ViewStyle = {
@@ -84,6 +91,7 @@ const CurrencyInput = ({
     borderRadius: heightPixel(8),
     borderWidth: 0.5,
     backgroundColor: !editable ? colors.fainterGrey : colors.transparent,
+    justifyContent: 'flex-start',
   };
 
   let inputStyle: TextStyle = INPUT;

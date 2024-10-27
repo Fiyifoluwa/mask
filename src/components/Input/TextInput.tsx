@@ -63,6 +63,7 @@ const TextInput: React.FC<InputProps> = ({
     height: rest.multiline ? heightPixel(100) : heightPixel(55),
     width: '90%',
     fontFamily: 'Moderat-Regular',
+    textAlignVertical: rest.multiline ? 'top' : 'center',
   };
 
   const containerStyle: ViewStyle = {
