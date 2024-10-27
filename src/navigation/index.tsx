@@ -11,7 +11,7 @@ const Stack = createStackNavigator<AppStackParamList>();
 
 export const modalOptions = {
   presentation: 'modal',
-  gestureEnabled: false,
+  gestureEnabled: true,
   ...TransitionPresets.ModalSlideFromBottomIOS,
 };
 
