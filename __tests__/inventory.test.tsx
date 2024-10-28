@@ -22,7 +22,7 @@ const mockItem = {
   totalStock: '10',
   price: '9999',
   description: 'This is a test item description',
-  lastModified: new Date().toISOString(),
+  lastModified: new Date('2024-10-21T00:00:00.000Z').toISOString(),
 };
 
 const mockInventoryContext = {
