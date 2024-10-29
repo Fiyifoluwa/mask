@@ -47,7 +47,7 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "marginBottom": 13,
+              "marginVertical": 13,
             },
           ]
         }
@@ -94,10 +94,14 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
             style={
               [
                 {
+                  "alignItems": "center",
                   "alignSelf": "flex-start",
                   "backgroundColor": "#EBEDEF",
-                  "borderRadius": 26,
+                  "borderRadius": 76,
+                  "height": 63,
+                  "justifyContent": "center",
                   "padding": 16,
+                  "width": 63,
                 },
               ]
             }
@@ -273,6 +277,7 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
                         "fontFamily": "Moderat-Regular",
                         "fontSize": 22,
                         "height": 87,
+                        "textAlignVertical": "center",
                         "width": "90%",
                       }
                     }
@@ -356,6 +361,7 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
                         "fontFamily": "Moderat-Regular",
                         "fontSize": 22,
                         "height": 87,
+                        "textAlignVertical": "center",
                         "width": "90%",
                       }
                     }
@@ -502,7 +508,8 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
                         "borderWidth": 0.5,
                         "flexDirection": "row",
                         "height": 76,
-                        "paddingLeft": 16,
+                        "justifyContent": "flex-start",
+                        "paddingHorizontal": 16,
                         "width": "100%",
                       },
                     ]
@@ -541,11 +548,18 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
                           "color": "#000000",
                           "fontSize": 22,
                           "height": 87,
+                          "margin": 0,
+                          "paddingVertical": 0,
+                          "textAlignVertical": "center",
                           "width": "100%",
                         },
                         {
                           "fontFamily": "Moderat-Regular",
-                          "paddingBottom": 1,
+                          "includeFontPadding": false,
+                          "paddingBottom": 2,
+                          "paddingVertical": 0,
+                          "textAlign": "left",
+                          "textAlignVertical": "center",
                         },
                       ]
                     }
@@ -630,6 +644,7 @@ exports[`Screen Snapshots should match AddItem screen snapshot 1`] = `
                         "fontFamily": "Moderat-Regular",
                         "fontSize": 22,
                         "height": 158,
+                        "textAlignVertical": "top",
                         "width": "90%",
                       }
                     }
@@ -859,7 +874,7 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
               "backgroundColor": "transparent",
               "flexDirection": "row",
               "justifyContent": "space-between",
-              "marginBottom": 13,
+              "marginVertical": 13,
             },
           ]
         }
@@ -906,10 +921,14 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
             style={
               [
                 {
+                  "alignItems": "center",
                   "alignSelf": "flex-start",
                   "backgroundColor": "#EBEDEF",
-                  "borderRadius": 26,
+                  "borderRadius": 76,
+                  "height": 63,
+                  "justifyContent": "center",
                   "padding": 16,
+                  "width": 63,
                 },
               ]
             }
@@ -991,11 +1010,14 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
       >
         <View
           style={
-            {
-              "backgroundColor": "#fff",
-              "flex": 1,
-              "paddingVertical": 16,
-            }
+            [
+              {},
+              {
+                "backgroundColor": "#fff",
+                "flex": 1,
+                "paddingVertical": 16,
+              },
+            ]
           }
         >
           <RCTScrollView
@@ -1094,6 +1116,7 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
                           "fontFamily": "Moderat-Regular",
                           "fontSize": 22,
                           "height": 87,
+                          "textAlignVertical": "center",
                           "width": "90%",
                         }
                       }
@@ -1177,6 +1200,7 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
                           "fontFamily": "Moderat-Regular",
                           "fontSize": 22,
                           "height": 87,
+                          "textAlignVertical": "center",
                           "width": "90%",
                         }
                       }
@@ -1323,7 +1347,8 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
                           "borderWidth": 0.5,
                           "flexDirection": "row",
                           "height": 76,
-                          "paddingLeft": 16,
+                          "justifyContent": "flex-start",
+                          "paddingHorizontal": 16,
                           "width": "100%",
                         },
                       ]
@@ -1362,11 +1387,18 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
                             "color": "#000000",
                             "fontSize": 22,
                             "height": 87,
+                            "margin": 0,
+                            "paddingVertical": 0,
+                            "textAlignVertical": "center",
                             "width": "100%",
                           },
                           {
                             "fontFamily": "Moderat-Regular",
-                            "paddingBottom": 1,
+                            "includeFontPadding": false,
+                            "paddingBottom": 2,
+                            "paddingVertical": 0,
+                            "textAlign": "left",
+                            "textAlignVertical": "center",
                           },
                         ]
                       }
@@ -1451,6 +1483,7 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
                           "fontFamily": "Moderat-Regular",
                           "fontSize": 22,
                           "height": 158,
+                          "textAlignVertical": "top",
                           "width": "90%",
                         }
                       }
@@ -1608,6 +1641,7 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
                 {
                   "alignSelf": "center",
                   "paddingHorizontal": 26,
+                  "paddingVertical": 26,
                 },
               ]
             }
@@ -1628,7 +1662,7 @@ exports[`Screen Snapshots should match EditItem screen snapshot 1`] = `
               }
             >
               Last Modified: 
-              Less than 5 seconds ago. 26th Oct, 2024 at 18:25:03
+              21st Oct, 2024 at 01:00:00
             </Text>
           </View>
         </View>
@@ -1911,7 +1945,7 @@ exports[`Screen Snapshots should match Home screen snapshot 1`] = `
                   {
                     "description": "This is a test item description",
                     "id": "1",
-                    "lastModified": "2024-10-26T17:25:03.805Z",
+                    "lastModified": "2024-10-21T00:00:00.000Z",
                     "name": "Test Item",
                     "price": "9999",
                     "totalStock": "10",
@@ -2084,8 +2118,9 @@ exports[`Screen Snapshots should match Home screen snapshot 1`] = `
                     },
                     {
                       "alignItems": "center",
-                      "borderRadius": 30,
+                      "borderRadius": 45,
                       "elevation": 4,
+                      "height": 60,
                       "justifyContent": "center",
                       "shadowColor": "#000000",
                       "shadowOffset": {
@@ -2094,6 +2129,7 @@ exports[`Screen Snapshots should match Home screen snapshot 1`] = `
                       },
                       "shadowOpacity": 0.25,
                       "shadowRadius": 4,
+                      "width": 60,
                     },
                   ]
                 }
